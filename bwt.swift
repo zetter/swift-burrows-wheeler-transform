@@ -8,12 +8,12 @@ class BWT {
   func encode(encodedString: String) -> String {
     var stringWithTerminator = encodedString + self.terminator
     let n = countElements(stringWithTerminator)
-    var roatatedStrings: [String] = []
+    var rotatedStrings: [String] = []
     for i in 0..<n {
-      roatatedStrings.append(rotate(stringWithTerminator, count: i))
+      rotatedStrings.append(rotate(stringWithTerminator, count: i))
     }
-    sort(&roatatedStrings)
-    var lastChars = roatatedStrings.map {
+    sort(&rotatedStrings)
+    var lastChars = rotatedStrings.map {
       String($0[$0.endIndex.predecessor()])
     }
     return arrayToString(lastChars)
