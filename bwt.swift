@@ -1,6 +1,6 @@
 #!/usr/bin/env xcrun swift
 
-import Cocoa
+import Foundation
 
 class BWT {
   let terminator = "$"
