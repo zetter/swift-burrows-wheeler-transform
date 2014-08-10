@@ -56,7 +56,7 @@ class BWT {
   }
 }
 
-let bwt = BWT.init();
+let bwt = BWT();
 
 println(bwt.encode("hi"), "i$h")
 println(bwt.encode("banana"), "annb$aa")
