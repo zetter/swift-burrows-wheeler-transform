@@ -23,10 +23,7 @@ class BWT {
     let encodedArray = stringToArray(encodedString)
     let n = encodedArray.count
 
-    var builtStrings: [String] = []
-    for i in 0..<n {
-      builtStrings.append("")
-    }
+    var builtStrings = Array(count: n, repeatedValue: "")
 
     for i in 0..<n {
       for j in 0..<n {
