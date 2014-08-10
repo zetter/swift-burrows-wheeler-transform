@@ -44,7 +44,7 @@ class BWT {
   }
 
   func arrayToString(array: [String]) -> String {
-    return array.reduce("", combine: {$0 + $1})
+    return array.reduce("", combine: +)
   }
 
   func rotate(string: String, count: Int) -> String {
