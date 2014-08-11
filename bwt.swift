@@ -7,10 +7,9 @@ class BWT {
 
   func encode(encodedString: String) -> String {
     var stringWithTerminator = encodedString + self.terminator
-    let n = countElements(stringWithTerminator)
     var rotatedStrings = [String]()
 
-    for i in 0..<n {
+    for (i, _) in enumerate(stringWithTerminator) {
       rotatedStrings.append(rotate(stringWithTerminator, count: i))
     }
     sort(&rotatedStrings)
@@ -23,13 +22,11 @@ class BWT {
 
   func decode(encodedString: String) -> String {
     let encodedArray = Array(encodedString)
-    let n = encodedArray.count
+    var builtStrings = Array(count: encodedArray.count, repeatedValue: "")
 
-    var builtStrings = Array(count: n, repeatedValue: "")
-
-    for i in 0..<n {
-      for j in 0..<n {
-        builtStrings[j] = encodedArray[j] + builtStrings[j]
+    for _ in encodedArray {
+      for (i, char) in enumerate(encodedArray) {
+        builtStrings[i] = char + builtStrings[i]
       }
       sort(&builtStrings)
     }
