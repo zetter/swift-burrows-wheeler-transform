@@ -9,10 +9,12 @@ class BWT {
     var stringWithTerminator = encodedString + self.terminator
     let n = countElements(stringWithTerminator)
     var rotatedStrings = [String]()
+
     for i in 0..<n {
       rotatedStrings.append(rotate(stringWithTerminator, count: i))
     }
     sort(&rotatedStrings)
+
     let lastChars = rotatedStrings.map {
       $0[$0.endIndex.predecessor()]
     }
