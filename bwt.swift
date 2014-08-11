@@ -47,12 +47,14 @@ class BWT {
     return array.reduce("", combine: +)
   }
 
-  func rotate(string: String, count: Int) -> String {
-    var array = stringToArray(string)
+  func rotate(inputString: String, count: Int) -> String {
+    var string = inputString
     for i in 0..<count {
-      array = [array.removeAtIndex(array.count - 1)] + array
+      let head = string[string.startIndex]
+      let tail = string.substringFromIndex(advance(string.startIndex, 1))
+      string = tail + head
     }
-    return arrayToString(array)
+    return string
   }
 }
 
