@@ -21,11 +21,10 @@ class BWT {
   }
 
   func decode(encodedString: String) -> String {
-    let encodedArray = Array(encodedString)
-    var builtStrings = Array(count: encodedArray.count, repeatedValue: "")
+    var builtStrings = Array(count: countElements(encodedString), repeatedValue: "")
 
-    for _ in encodedArray {
-      for (i, char) in enumerate(encodedArray) {
+    for _ in encodedString {
+      for (i, char) in enumerate(encodedString) {
         builtStrings[i] = char + builtStrings[i]
       }
       sort(&builtStrings)
