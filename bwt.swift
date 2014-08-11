@@ -8,7 +8,7 @@ class BWT {
   func encode(encodedString: String) -> String {
     var stringWithTerminator = encodedString + self.terminator
     let n = countElements(stringWithTerminator)
-    var rotatedStrings: [String] = []
+    var rotatedStrings = [String]()
     for i in 0..<n {
       rotatedStrings.append(rotate(stringWithTerminator, count: i))
     }
